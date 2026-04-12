@@ -1,55 +1,60 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link";
-import { TbActivity } from "react-icons/tb";
+import { Mail } from "lucide-react";
+import { SiInstagram } from "react-icons/si";
 
 export default function Menu() {
   
+  const menuItems = [
+    { href: "/about", label: "About Me" },
+    { href: "/hobby", label: "Hobbies" },
+    { href: "/portfolio", label: "Portfolio" },
+    { href: "/daily", label: "Daily" }
+  ];
+
   return (
-    <>
-      <div className="bg-white w-[320px] h-full p-4">
+    <div className="bg-gray-100 w-full md:w-[320px] md:h-full md:fixed md:left-0 md:top-0 md:overflow-y-auto noise relative p-3 md:p-4">
 
-        <Link href="/">  
-            HOME
-        </Link>
+      <Link href="/" className="mb-3 md:mb-4 block text-center font-bold text-slate-700 hover:text-slate-800 transition text-sm md:text-base">  
+        HOME
+      </Link>
 
-        <div className="flex justify-center items-center w-full">
-          <div className="bg-gray-200 w-[80px] h-[80px] rounded-full overflow-hidden flex justify-center items-center">
-            <Image src="/cat.png" alt="cat" width={80} height={80} />
-          </div>
+      <div className="flex justify-center items-center w-full mb-3 md:mb-4">
+        <div className="bg-gray-300 w-[80px] h-[80px] md:w-[100px] md:h-[100px] rounded-full overflow-hidden flex justify-center items-center flex-shrink-0">
+          <Image src="/頭像.png" alt="頭像" width={100} height={100} className="w-full h-full object-cover" loading="eager" priority />
         </div>
+      </div>
 
-        <div className="text-center">名字</div>
-        <div className="text-center">簡介</div>
+      <div className="text-center font-bold mb-2 text-slate-700 text-sm md:text-base">盧筱棠</div>
+      <div className="text-center text-xs md:text-sm mb-3 md:mb-4 text-slate-600">佛系寶可夢玩家</div>
 
-        <div className="flex gap-2">
-          {/* icons, links, images */}
-          <div>
-            <TbActivity />
-          </div>
-          <div>社群連結</div>
-          <div>社群連結</div>
-        </div>
+      <div className="flex gap-2 md:gap-3 mb-4 md:mb-6 justify-center">
+        {/* Gmail Link */}
+        <a href="mailto:113405164@g.nccu.edu.tw" 
+           className="text-slate-700 hover:text-slate-800 transition"
+           title="GMAIL: 113405164@g.nccu.edu.tw">
+          <Mail size={20} className="md:w-6 md:h-6" />
+        </a>
+        {/* Instagram Link */}
+        <a href="https://www.instagram.com/lxtkz_/" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           className="text-slate-700 hover:text-slate-800 transition"
+           title="IG: @lxtkz_">
+          <SiInstagram size={20} className="md:w-6 md:h-6" />
+        </a>
+      </div>
 
-
-        <Link href="/about">
-          <div className="bg-gray-300 p-[16px] rounded-md">關於我</div>
-        </Link>
-
-        <Link href="/hobby">
-          <div className="bg-gray-300 p-[16px] mt-2 rounded-md">我的興趣</div>
-        </Link>
-
-        <Link href="/design-project">
-          <div className="bg-gray-300 p-[16px] mt-2 rounded-md">設計專案</div>
-        </Link>
-
-        <Link href="/programming-project">
-          <div className="bg-gray-300 p-[16px] mt-2 rounded-md">程式專案</div>
-        </Link>
-
-
-        </div>
-    </>
+      <div className="items center w-full flex flex-col gap-3 md:gap-4">
+        {menuItems.map((item) => (
+          <Link href={item.href} key={item.href}>
+            <div className="bg-white border-2 border-slate-700 p-3 md:p-[16px] rounded-md hover:bg-slate-700 hover:text-white text-center font-semibold text-slate-700 transition text-sm md:text-base shadow-md hover:shadow-lg active:scale-95 cursor-pointer">
+              {item.label}
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }

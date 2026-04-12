@@ -1,22 +1,19 @@
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
+import Menu from "@/component/Menu";
 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "個人履歷",
-  description: "個人履歷",
+  title: "盧筱棠的個人履歷",
+  description: "盧筱棠的個人履歷",
 };
 
 export default function RootLayout({
@@ -27,21 +24,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full m-0 p-0">
+        <div className="flex flex-col md:flex-row min-h-screen w-full bg-slate-700">
 
+          {/* 左邊 / 上方 - Menu */}
+          <div className="hidden md:block">
+            <Menu />
+          </div>
 
-        <div className="flex h-full">
-
-          {/* 左邊 */}
-          
-
-          {/* 右邊 */}
-          <div className="bg-gray-200 w-full h-full">
-
+          {/* 右邊 / 下方 - Content */}
+          <div className="w-full flex-1 md:ml-[320px] overflow-visible">
             {children}
-
           </div>
 
         </div>
@@ -50,3 +45,4 @@ export default function RootLayout({
     </html>
   );
 }
+

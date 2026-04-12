@@ -16,7 +16,7 @@ export default function Hobby() {
         </div>
         <div className="w-full flex-1 p-4 md:p-6">
           <div className="text-2xl md:text-3xl font-bold text-white">
-            我的興趣
+            日常
           </div>
         </div>
       </div>
