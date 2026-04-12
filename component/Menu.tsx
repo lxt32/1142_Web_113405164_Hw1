@@ -10,7 +10,7 @@ export default function Menu() {
     { href: "/about", label: "About Me" },
     { href: "/hobby", label: "Hobbies" },
     { href: "/portfolio", label: "Portfolio" },
-    { href: "/daily", label: "Daily" }
+    { href: "/Creations", label: "My Creations" }
   ];
 
   return (
