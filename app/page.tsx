@@ -14,7 +14,7 @@ export default function Home() {
           <Menu />
         </div>
 
-        {/* 桌面版和手機版的Welcome文字 */}
+        {/* Welcome */}
         <div className="flex-1 flex items-end justify-start w-full px-6 md:px-12 pb-8 md:pb-12">
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white typing-animation whitespace-nowrap">
             Welcome!

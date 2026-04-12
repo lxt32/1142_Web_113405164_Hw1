@@ -13,8 +13,8 @@ interface SkillsCircleProps {
 
 export default function SkillsCircle({ skillIcons }: SkillsCircleProps) {
   return (
-    <div className="flex items-center justify-center">
-      <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+    <div className="w-full flex items-center justify-center">
+      <div className="w-full max-w-xs sm:max-w-sm md:max-w-md grid grid-cols-2 gap-4 sm:gap-6 md:gap-8">
         {skillIcons.map((skill, index) => (
           <div
             key={index}
