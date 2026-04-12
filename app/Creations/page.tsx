@@ -26,7 +26,7 @@ export default function Creations() {
     { id: 7, title: "插畫作品", description: "日常創意繪畫", imageUrl: "/doodle.jpg", span: "col-span-1", detailDescription: "看了Wednesday第二季後很喜歡的角色Agnes。" },
     { id: 8, title: "插畫作品", description: "數位藝術創作", imageUrl: "/vocaloid.png", span: "col-span-2", detailDescription: "我都說他們是軟體。" },
     { id: 9, title: "插畫作品", description: "商業風格設計", imageUrl: "/cola2.png", span: "col-span-1", detailDescription: "畫了朋友的角色。" },
-    { id: 10, title: "日常攝影", description: "", imageUrl: "/222.jpg", span: "col-span-2", detailDescription: "黃昏時走回學校的路" },
+    { id: 10, title: "日常攝影", description: "", imageUrl: "/222.JPG", span: "col-span-2", detailDescription: "黃昏時走回學校的路" },
     { id: 11, title: "日常攝影", description: "", imageUrl: "/street.JPG", span: "col-span-1", detailDescription: "在田間偶然發現的樹下涼亭" },
     { id: 12, title: "日常攝影", description: "", imageUrl: "/333.JPG", span: "col-span-1", detailDescription: "中元普渡後似乎常常在路上看到金爐" },
   ];
