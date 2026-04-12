@@ -9,42 +9,42 @@ export default function Portfolio() {
   const [selectedItem, setSelectedItem] = useState<number | null>(null);
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
-  // 為每個item生成隨機transform
+
   const getRandomTransform = (id: number) => {
-    // 使用id作為seed來確保相同的item每次都有相同的隨機值
+
     const seed = id * 12345;
     const random1 = Math.sin(seed) * 0.5 + 0.5;
     const random2 = Math.sin(seed * 2) * 0.5 + 0.5;
     
-    const rotation = (random1 - 0.5) * 3; // -1.5 到 1.5 度之間的旋轉
-    const translateY = (random2 - 0.5) * 8; // -4 到 4px 之間的上下位移
+    const rotation = (random1 - 0.5) * 3;
+    const translateY = (random2 - 0.5) * 8;
     
     return `rotate(${rotation}deg) translateY(${translateY}px)`;
   };
 
-  // 作品數據 - 可根據需要修改
   const creationsData = [
     { id: 1, title: "飛鼠逃跑了嗚嗚嗚55", description: "ITlab大展小組作品", imageUrl: "/555.png", span: "col-span-1", detailDescription: "這是一個結合實體道具與網站劇情的互動式作品，我在小組中主要負責網頁開發。", link: "https://drive.google.com/file/d/12GvYj7Mo6Udtod-uQGZTNva_zjzPLIZf/view?usp=drive_link" },
     { id: 2, title: "蒲公英的約定 翻拍", description: "多媒體與程式設計小組專案", imageUrl: "/10.png", span: "col-span-2", detailDescription: "我們小組翻拍了周杰倫的歌曲，我在專案中負責攝影及後製的部分。", link: "https://www.youtube.com/watch?v=65PN1fKVFxY&sttick=0" },
-    { id: 3, title: "Inside Out 2 配音", description: "多媒體與程式設計小組專案", imageUrl: "/IO2.png", span: "col-span-1", detailDescription: "這是小組共同為電影片段進行重新編寫台詞並配音的專案，除了配音外我也負責影片的後製。", link: null },
+    { id: 3, title: "Inside Out 2 配音", description: "多媒體與程式設計小組專案", imageUrl: "/IO2.png", span: "col-span-1", detailDescription: "這是小組共同為電影片段進行重新編寫台詞並配音的專案，除了配音外我也負責影片的後製。", link: "https://drive.google.com/drive/u/3/home" },
     { id: 5, title: "植物？", description: "生成式藝術練習", imageUrl: "/blue.png", span: "col-span-1", detailDescription: "利用p5.js創作的生成式藝術作品。", link: "https://openprocessing.org/user/575235#sketches" },
-    { id: 4, title: "NO SKIP", description: "人機介面期末專案", imageUrl: "/noskip.png", span: "col-span-1", detailDescription: "獨自設計的一款鼓勵大學生去上課的APP。", link: "https://noskip.framer.website/" },
+    { id: 4, title: "NO SKIP", description: "人機介面期末專案", imageUrl: "/noskip.png", span: "col-span-1", detailDescription: "這是在大二上時從頭到尾都獨自設計的APP，旨在鼓勵大學生去上課。", link: "https://noskip.framer.website/" },
   ];
   
   return (
     <>
       <div className="w-full min-h-screen bg-slate-700 flex flex-col md:flex-row">
-        <Link href="/" className="md:hidden absolute left-2 top-2 bg-white px-3 py-1 rounded text-slate-700 font-semibold hover:bg-gray-100 transition">  
-            返回
-        </Link>
+        {/* 手機版菜單 */}
+        <div className="md:hidden w-full">
+          <Menu />
+        </div>
         <div className="hidden md:block">
           <Menu />
         </div>
         <div className="w-full flex-1 p-4 md:p-6">
           <div className="text-2xl md:text-3xl font-bold text-white mb-6">
-            Portfolio
+            Projects
           </div>
-          <div className="rounded-lg p-3 sm:p-4 md:p-6" style={{backgroundColor: '#E8F0F8'}}>
+          <div className="rounded-lg p-3 sm:p-4 md:p-6" style={{backgroundColor: 'rgba(243, 244, 246, 0.75)'}}>
             
             <div className="flex flex-col gap-3 sm:gap-4">
               {creationsData.map((item) => (
@@ -62,7 +62,7 @@ export default function Portfolio() {
                   style={{ transform: hoveredItem === item.id ? 'scale(1.02)' : 'none' }}>
 
                     {/* 圖片 - 左側 */}
-                    <div className="w-32 sm:w-40 h-full flex-shrink-0 bg-center bg-cover"
+                    <div className="w-48 sm:w-56 h-full flex-shrink-0 bg-center bg-cover"
                       style={{ backgroundImage: `url(${item.imageUrl})` }}
                     ></div>
                     

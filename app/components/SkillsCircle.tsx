@@ -11,7 +11,7 @@ interface SkillsCircleProps {
   skillIcons: Skill[];
 }
 
-export default function SkillsCircle({ skillIcons }: SkillsCircleProps) {
+export default function Skills({ skillIcons }: SkillsCircleProps) {
   return (
     <div className="w-full flex items-center justify-center">
       <div className="w-full max-w-xs sm:max-w-sm md:max-w-md grid grid-cols-2 gap-4 sm:gap-6 md:gap-8">

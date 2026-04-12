@@ -8,20 +8,17 @@ export default function Creations() {
   const [selectedItem, setSelectedItem] = useState<number | null>(null);
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
-  // 為每個item生成隨機transform
   const getRandomTransform = (id: number) => {
-    // 使用id作為seed來確保相同的item每次都有相同的隨機值
     const seed = id * 12345;
     const random1 = Math.sin(seed) * 0.5 + 0.5;
     const random2 = Math.sin(seed * 2) * 0.5 + 0.5;
     
-    const rotation = (random1 - 0.5) * 3; // -1.5 到 1.5 度之間的旋轉
-    const translateY = (random2 - 0.5) * 8; // -4 到 4px 之間的上下位移
+    const rotation = (random1 - 0.5) * 3;
+    const translateY = (random2 - 0.5) * 8;
     
     return `rotate(${rotation}deg) translateY(${translateY}px)`;
   };
 
-  // 作品數據 - 可根據需要修改
   const creationsData = [
     { id: 5, title: "悠遊卡設計", description: "初次使用Adobe illustrator創作", imageUrl: "/cat.png", span: "col-span-1", detailDescription: "我的第一個Adobe illustrator設計作品。" },
     { id: 4, title: "雜誌封面設計", description: "人機介面課堂練習", imageUrl: "/jisoo.png", span: "col-span-1", detailDescription: "這是人機介面課程的練習作品。" },
@@ -29,14 +26,18 @@ export default function Creations() {
     { id: 7, title: "插畫作品", description: "日常創意繪畫", imageUrl: "/doodle.jpg", span: "col-span-1", detailDescription: "看了Wednesday第二季後很喜歡的角色Agnes。" },
     { id: 8, title: "插畫作品", description: "數位藝術創作", imageUrl: "/vocaloid.png", span: "col-span-2", detailDescription: "我都說他們是軟體。" },
     { id: 9, title: "插畫作品", description: "商業風格設計", imageUrl: "/cola2.png", span: "col-span-1", detailDescription: "畫了朋友的角色。" },
+    { id: 10, title: "日常攝影", description: "", imageUrl: "/222.jpg", span: "col-span-2", detailDescription: "黃昏時走回學校的路" },
+    { id: 11, title: "日常攝影", description: "", imageUrl: "/street.JPG", span: "col-span-1", detailDescription: "在田間偶然發現的樹下涼亭" },
+    { id: 12, title: "日常攝影", description: "", imageUrl: "/333.JPG", span: "col-span-1", detailDescription: "中元普渡後似乎常常在路上看到金爐" },
   ];
   
   return (
     <>
       <div className="w-full min-h-screen bg-slate-700 flex flex-col md:flex-row">
-        <Link href="/" className="md:hidden absolute left-2 top-2 bg-white px-3 py-1 rounded text-slate-700 font-semibold hover:bg-gray-100 transition">  
-            返回
-        </Link>
+        {/* 手機版菜單 */}
+        <div className="md:hidden w-full">
+          <Menu />
+        </div>
         <div className="hidden md:block">
           <Menu />
         </div>
@@ -44,7 +45,7 @@ export default function Creations() {
           <div className="text-2xl md:text-3xl font-bold text-white mb-6">
             My Creations
           </div>
-          <div className="rounded-lg p-3 sm:p-4 md:p-6" style={{backgroundColor: '#E8F0F8'}}>
+          <div className="rounded-lg p-3 sm:p-4 md:p-6" style={{backgroundColor: 'rgba(243, 244, 246, 0.75)'}}>
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
               {creationsData.map((item) => (

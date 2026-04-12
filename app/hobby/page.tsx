@@ -33,9 +33,10 @@ export default function Hobbies() {
   return (
     <>
       <div className="w-full min-h-screen bg-slate-700 flex flex-col md:flex-row">
-        <Link href="/" className="md:hidden absolute left-2 top-2 bg-white px-3 py-1 rounded text-slate-700 font-semibold hover:bg-gray-100 transition">  
-          返回
-        </Link>
+        {/* 手機版菜單 */}
+        <div className="md:hidden w-full">
+          <Menu />
+        </div>
         <div className="hidden md:block">
           <Menu />
         </div>
@@ -43,7 +44,7 @@ export default function Hobbies() {
           <div className="text-2xl md:text-3xl font-bold text-white mb-6">
             Hobbies
           </div>
-          <div className="rounded-lg p-3 sm:p-4 md:p-6" style={{backgroundColor: '#E8F0F8'}}>
+          <div className="rounded-lg p-3 sm:p-4 md:p-6" style={{backgroundColor: 'rgba(243, 244, 246, 0.75)'}}>
             
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {Object.entries(projectData).map(([key, item]) => (
@@ -59,7 +60,7 @@ export default function Hobbies() {
                     style={{ backgroundImage: `url(${item.imageUrl})` }}
                   ></div>
                   
-                  {/* 黑色覆蓋層 - Hover時顯示，不透明度50% */}
+                  {/* Hover */}
                   <div className={`absolute inset-0 bg-black transition-opacity duration-300 z-10 ${
                     hoveredItem === key ? 'opacity-50' : 'opacity-0'
                   }`}></div>

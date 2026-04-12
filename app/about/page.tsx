@@ -20,8 +20,8 @@ export default function About() {
       year: "2025~"
     },
     {
-      title: "ITlab 助理",
-      year: "2025~"
+      title: "傳院實習平台 ITlab 助理 | 行政組長",
+      year: "2025~ | 2026~"
     }
   ];
 
@@ -38,9 +38,10 @@ export default function About() {
   
   return (
     <div className="w-full min-h-screen bg-slate-700 flex flex-col md:flex-row">
-      <Link href="/" className="md:hidden absolute left-2 top-2 bg-white px-3 py-1 rounded text-slate-700 font-semibold hover:bg-gray-100 transition">  
-        返回
-      </Link>
+      {/* 手機版菜單 */}
+      <div className="md:hidden w-full">
+        <Menu />
+      </div>
       <div className="hidden md:block">
         <Menu />
       </div>
@@ -52,6 +53,9 @@ export default function About() {
         <div className="max-w-5xl">
           
             <div className="rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8">
+              <p className="text-white text-sm sm:text-base md:text-lg font-medium leading-relaxed">
+                盧筱棠 / Hsiao-Tang Lu
+              </p>
               <p className="text-white text-sm sm:text-base md:text-lg font-medium leading-relaxed">
                 現正就讀政大傳院二年級，選擇困難末期患者，每天花一小時在想晚餐要吃什麼。
               </p>
@@ -68,7 +72,7 @@ export default function About() {
                 <h2 className="text-2xl sm:text-3xl font-bold text-white">Education</h2>
               </div>
 
-              {/* Timeline */}
+              {/* line */}
               <div className="relative w-full">
                 <div className="absolute left-2 top-2 bottom-0 w-1" style={{backgroundColor: '#98ACD8'}}></div>
 
@@ -76,7 +80,7 @@ export default function About() {
                   {educationItems.map((item, index) => (
                     <div key={index} className="relative group cursor-pointer">
                       {/* 卡片 */}
-                      <div className="rounded-lg sm:rounded-xl p-3 sm:p-4 transition-transform duration-300 transform group-hover:scale-105 shadow-md w-full" style={{backgroundColor: '#E8F0F8'}}>
+                      <div className="rounded-lg sm:rounded-xl p-3 sm:p-4 transition-transform duration-300 transform group-hover:scale-105 shadow-md w-full" style={{backgroundColor: 'rgba(243, 244, 246, 0.75)'}}>
                         <p className="text-slate-700 font-semibold text-xs sm:text-sm md:text-base break-words">{item.title}</p>
                         <p className="text-slate-500 text-xs mt-2">{item.year}</p>
                       </div>

@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { Mail, Home } from "lucide-react";
 import { SiInstagram } from "react-icons/si";
 
 export default function Menu() {
@@ -9,15 +9,15 @@ export default function Menu() {
   const menuItems = [
     { href: "/about", label: "About Me" },
     { href: "/hobby", label: "Hobbies" },
-    { href: "/portfolio", label: "Portfolio" },
+    { href: "/projects", label: "Projects" },
     { href: "/Creations", label: "My Creations" }
   ];
 
   return (
     <div className="bg-gray-100 w-full md:w-[320px] md:h-full md:fixed md:left-0 md:top-0 md:overflow-y-auto noise relative p-3 md:p-4">
 
-      <Link href="/" className="mb-3 md:mb-4 block text-center font-bold text-slate-700 hover:text-slate-800 transition text-sm md:text-base">  
-        HOME
+      <Link href="/" className="mb-3 md:mb-4 flex justify-center items-center font-bold text-slate-700 hover:text-slate-800 transition">  
+        <Home size={24} className="md:w-6 md:h-6" />
       </Link>
 
       <div className="flex justify-center items-center w-full mb-3 md:mb-4">
@@ -25,9 +25,10 @@ export default function Menu() {
           <Image src="/頭像.png" alt="頭像" width={100} height={100} className="w-full h-full object-cover" loading="eager" priority />
         </div>
       </div>
-
-      <div className="text-center font-bold mb-2 text-slate-700 text-sm md:text-base">盧筱棠</div>
-      <div className="text-center text-xs md:text-sm mb-3 md:mb-4 text-slate-600">佛系寶可夢玩家</div>
+        <div className="text-center text-xs md:text-sm mb-3 md:mb-4 text-slate-600">💫</div>   
+        <div className="text-center font-bold mb-2 text-slate-700 text-sm md:text-base">Hsiao-Tang Lu</div>
+        <div className="text-center text-xs md:text-sm mb-3 md:mb-4 text-slate-600">NCCU COMM | DCT</div>
+        <div className="text-center text-xs md:text-sm mb-3 md:mb-4 text-slate-600">佛系寶可夢玩家</div>
 
       <div className="flex gap-2 md:gap-3 mb-4 md:mb-6 justify-center">
         {/* Gmail Link */}
