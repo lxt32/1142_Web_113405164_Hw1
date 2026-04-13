@@ -26,12 +26,12 @@ export default function About() {
   ];
 
   const skillIcons = [
-    { icon: "/icon (2).png", label: "攝影" },
-    { icon: "/icon (3).png", label: "文書" },
-    { icon: "/icon (4).png", label: "Premiere" },
-    { icon: "/icon (5).png", label: "Photoshop" },
-    { icon: "/icon (6).png", label: "illustrator" },
-    { icon: "/icon (7).png", label: "Figma" }
+    { icon: "/icon (1).png", label: "攝影" },
+    { icon: "/icon (2).png", label: "文書" },
+    { icon: "/icon (3).png", label: "Premiere" },
+    { icon: "/icon (4).png", label: "Photoshop" },
+    { icon: "/icon (5).png", label: "illustrator" },
+    { icon: "/icon (6).png", label: "Figma" }
   ];
 
 
