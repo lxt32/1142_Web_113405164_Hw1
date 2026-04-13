@@ -26,7 +26,7 @@ export default function Portfolio() {
     { id: 1, title: "飛鼠逃跑了嗚嗚嗚55", description: "ITlab大展小組作品", imageUrl: "/555.png", span: "col-span-1", detailDescription: "這是一個結合實體道具與網站劇情的互動式作品，我在小組中主要負責網頁開發。", link: "https://drive.google.com/file/d/12GvYj7Mo6Udtod-uQGZTNva_zjzPLIZf/view?usp=drive_link" },
     { id: 2, title: "蒲公英的約定 翻拍", description: "多媒體與程式設計小組專案", imageUrl: "/10.png", span: "col-span-2", detailDescription: "我們小組翻拍了周杰倫的歌曲，我在專案中負責攝影及後製的部分。", link: "https://www.youtube.com/watch?v=65PN1fKVFxY&sttick=0" },
     { id: 3, title: "Inside Out 2 配音", description: "多媒體與程式設計小組專案", imageUrl: "/IO2.png", span: "col-span-1", detailDescription: "這是小組共同為電影片段進行重新編寫台詞並配音的專案，除了配音外我也負責影片的後製。", link: "https://drive.google.com/drive/u/3/home" },
-    { id: 5, title: "植物？", description: "生成式藝術練習", imageUrl: "/blue.png", span: "col-span-1", detailDescription: "利用p5.js創作的生成式藝術作品。", link: "https://openprocessing.org/user/575235#sketches" },
+    { id: 5, title: "植物？", description: "生成式藝術練習", imageUrl: "/blue.png", span: "col-span-1", detailDescription: "利用p5.js創作的生成式藝術，點擊連結可以查看其他練習作品。", link: "https://openprocessing.org/user/575235#sketches" },
     { id: 4, title: "NO SKIP", description: "人機介面期末專案", imageUrl: "/noskip.png", span: "col-span-1", detailDescription: "這是在大二上時從頭到尾都獨自設計的APP，旨在鼓勵大學生去上課。", link: "https://noskip.framer.website/" },
   ];
   
